@@ -3,20 +3,31 @@
   <head>
     <meta charset=utf-8>
     <title>Testwebb</title>
+    <link href="styles/main.css" rel="stylesheet" type="text/css">
   </head>
   <body>
     <h1>Det här är min testwebb</h1>
     <img src="links/bild1.jpg" alt"Kvinna på en brygga" height="200px" weight="400px"></img>
-    <div>
-      <div>
-        <input placeholder="Någonting" maxlength="10" ></input>
-        <br>
-        <input type="email"></input>
-        <br>
-        <input type="email"></input>
+    <div class="inputSection">
+      <div class="inputs">
+        <input placeholder="Någonting"></input>
       </div>
-      <button>Add</button>
+      <button class="addOption">Add</button>
     </div>
+    <div class="resultSection"></div>
     <button>go</button>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+      $(function() {
+        $('.resultSection').hide()
+
+        var add_option = function() {
+          $('.inputs').append('<input></input>')
+        }
+
+        $('.addOption').click(add_option)
+    })
+  </script>
   </body>
 </html>
