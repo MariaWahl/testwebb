@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang=en>
+  <head>
+    <meta charset=utf-8>
+    <title>Testwebb</title>
+    <link href="styles/main.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+
+    <div class="meny">
+      <a href="index.html">HEM</a>
+      <a href="om.html">OM</a>
+      <a href="slumpa.html">Slumpa</a>
+    </div>
+
+    <h1>Testa att slumpa fram ett värde</h1>
+
+    <div class="inputSection">
+      <div class="inputs">
+        <input placeholder="Fyll i ett alternativ"></input>
+      </div>
+      <button class="addOption">Add</button>
+    </div>
+    <div class="resultSection"></div>
+    <button class="submit">Go</button>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+      $(function() {
+        $('.resultSection').hide()
+
+        var add_option = function() {
+          $('.inputs').append('<input></input>')
+        }
+        $('.addOption').click(add_option)
+
+        var options = []
+        var submit = function() {
+          $('.inputSection').hide()
+          $('.resultSection').css('display', 'flex')
+          $('input').each(function() {
+            options.push($(this).val())
+          })
+          var winner = options[Math.floor(Math.random() * options.length)]
+          console.log(winner)
+          $('.resultSection').text(winner)
+        }
+        $('.submit').click(submit)
+    })
+  </script>
+  </body>
+</html>

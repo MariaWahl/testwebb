@@ -6,40 +6,15 @@
     <link href="styles/main.css" rel="stylesheet" type="text/css">
   </head>
   <body>
-    <h1>Det här är min testwebb</h1>
-    <img src="links/bild1.jpg" alt"Kvinna på en brygga" height="200px" weight="400px"></img>
-    <div class="inputSection">
-      <div class="inputs">
-        <input placeholder="Någonting"></input>
-      </div>
-      <button class="addOption">Add</button>
+
+      <div class="meny">
+      <a href="index.html">HEM</a>
+      <a href="om.html">OM</a>
+      <a href="slumpa.html">Slumpa</a>
     </div>
-    <div class="resultSection"></div>
-    <button class="submit">Go</button>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script>
-      $(function() {
-        $('.resultSection').hide()
-
-        var add_option = function() {
-          $('.inputs').append('<input></input>')
-        }
-        $('.addOption').click(add_option)
-
-        var options = []
-        var submit = function() {
-          $('.inputSection').hide()
-          $('.resultSection').css('display', 'flex')
-          $('input').each(function() {
-            options.push($(this).val())
-          })
-          var winner = options[Math.floor(Math.random() * options.length)]
-          console.log(winner)
-          $('.resultSection').text(winner)
-        }
-        $('.submit').click(submit)
-    })
+    <img src="links/bild1.jpg" alt"Kvinna på en brygga" height="200px" weight="400px"></img>
+  
   </script>
   </body>
 </html>
